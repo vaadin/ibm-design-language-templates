@@ -1,0 +1,39 @@
+@mixin dashboardtemplate{
+	
+	.dashboard-layout{
+		padding: 60px 60px 0 60px;
+	}
+	
+	.dashboard-item{
+		background-color: white;
+		border: 1px solid white;
+		border-radius: 5px;
+		margin: 0 0 30px 30px;
+		padding: 15px;
+		
+		> .statistics-label{
+			margin-top: 15px;
+			
+			.statistics-value{
+				float: right;
+				font-weight: bold;
+			}
+		}
+	}
+	
+	.root-layout[width-range~="321px-768px"]{
+		.chart-item{
+			display: none;
+		}
+		
+		.dashboard-layout{
+			padding: 10px;
+		}
+		
+		.dashboard-item{
+			width: 100% !important;
+			min-width: 321px;
+			margin: 0;
+		}
+	}
+}

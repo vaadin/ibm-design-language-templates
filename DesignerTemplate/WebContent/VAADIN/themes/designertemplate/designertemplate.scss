@@ -1,0 +1,239 @@
+// Global variable overrides. Must be declared before importing Valo.
+
+// Defines the plaintext font size, weight and family. Font size affects general component sizing.
+
+//$v-font-weight: 300;
+
+// Defines the border used by all components.
+//$v-border: 1px solid (v-shade 0.7);
+//$v-border-radius: 4px;
+
+// Affects the color of some component elements, e.g Button, Panel title, etc
+//$v-background-color: hsl(210, 0%, 98%);
+// Affects the color of content areas, e.g  Panel and Window content, TextField input etc
+//$v-app-background-color: $v-background-color;
+
+// Affects the visual appearance of all components
+//$v-gradient: v-linear 8%;
+//$v-bevel-depth: 30%;
+//$v-shadow-opacity: 5%;
+
+// Defines colors for indicating status (focus, success, failure)
+//$v-focus-color: valo-focus-color(); // Calculates a suitable color automatically
+//$v-friendly-color: #2c9720;
+//$v-error-indicator-color: #ed473b;
+
+$v-font-size: 16px;
+$v-font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+
+
+@import "../valo/valo.scss";
+
+$root-background-color: #f3f3f3;
+$header-bar-height: 100px;
+$main-color: #7cc7ff;
+$menu-color: #414b55;
+$header-label-font-size: 1.618em;
+@mixin designertemplate {
+	@include valo;
+
+	.v-nativebutton{
+		background: none;
+		border: none;
+		
+		&:hover{
+			cursor: pointer;
+		}
+	}
+
+
+	.root-layout{
+		background-color: $root-background-color;
+		
+		.scroll-panel{
+			background-color: $root-background-color;
+		}
+					
+		.header-bar{
+			background-color: $menu-color;
+			padding: 0px 15px 0 15px;
+			vertical-align: middle;
+			height: 65px;
+			
+			> * {
+				color: #FFFFFF;
+				float: right;
+				padding: 0;
+				line-height: 20px;
+				margin-left: 15px;
+				
+				/** Vertically center everything **/ 
+				position: relative;
+  				top: 50%;
+  				-webkit-transform: translateY(-50%);
+  				-ms-transform: translateY(-50%);
+ 				transform: translateY(-50%);
+			}
+			
+			> .search-field{
+				background-color: #323b45;
+				border-color: #58626d;
+				padding-left: 5px;
+				
+				&.v-textfield-prompt{
+					color: #a3a3a3;
+					font-style: italic;
+				}
+			}
+			
+		}
+		
+		.content-layout{
+			padding: 60px;
+		}
+		
+		.side-bar {
+		
+			background-color: $menu-color;
+			width: 100px;
+			
+			> .menu-button{
+				position: relative;
+				color: $main-color;
+				margin-top: 15px;
+				height: 70px;
+				
+				&.selected{
+					background-color: $root-background-color; 
+				}
+				
+				.v-nativebutton-caption{
+					position: absolute;
+					bottom: 5px;
+					text-align: center;				
+					left: 0;
+					right: 0;
+					margin-left: auto;
+					margin-right: auto;
+				}
+				
+				.v-icon{
+					position: absolute;
+					font-size: 35px;
+					margin-left: auto;
+					margin-right: auto;
+					top: 0;
+					left: 0;
+					right: 0;
+				}
+			}
+		}
+		
+		.header-label{
+			font-size: $header-label-font-size;
+			width: 100%;
+			margin-bottom: 20px;
+			color: $main-color;
+			border-bottom: 2px solid $main-color;
+		}
+		
+		.header-label-small{
+			width: 100%;
+			color: $main-color;
+			border-bottom: 2px solid $main-color;
+		}
+		
+		.billing-formlayout,
+		.order-summary-layout{
+			
+			background: #ffffff;
+			border: #ffffff;
+			border-radius: 5px;
+			margin: 0 0 0 20px;
+			float: left;
+			padding: 0 15px 15px 0;
+			
+			.form-textfield{
+				background: none;
+				border: none;
+				border-bottom: 2px solid #9fa092;
+			}
+			
+			.email-field{
+				min-width: 250px;
+			}
+		}
+		
+		.billing-formlayout{
+			width: 100%;
+			max-width: 722px;
+		}
+		
+		.order-item{
+		
+			.cancel-order-button{
+				background: none;
+				border: none;
+				position: relative; 
+				margin-left: 15px;
+				margin-top: 10px;
+				padding: 0;
+				float: right;
+
+				.v-icon{
+					font-size: 25px;
+					width: 25px;
+					height: 25px;
+					line-height: 25px;
+				}
+			}
+		}
+		
+		.order-sum{
+			position: absolute;
+			left: 220px;
+			text-align: right;
+			width: 100px;
+		}
+		
+		.total-sum{
+			font-weight: bold;
+		}
+	}
+	
+	.root-layout[width-range~="321px-768px"]{
+		.billing-formlayout
+		{
+			margin: 15px 0 0 0;
+			width: 100% !important;
+		}
+		
+		.order-summary-layout{
+			margin: 15px 0 0 0;
+		}
+		
+		.content-layout{
+			padding: 10px;
+		}
+		
+		.side-bar{
+			width: 60px;
+			
+			> .menu-button{
+			
+				height: 50px;
+			
+				& > .v-nativebutton-caption{
+					visibility: hidden;
+					margin-top: 5px;
+				}
+			}
+		}
+		
+		.header-bar{
+			height: 45px;
+			padding: 2px;	
+		}
+	}
+}

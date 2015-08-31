@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="UTF-8" name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;PAPER_WIDTH&quot;:1440,&quot;PAPER_HEIGHT&quot;:900,&quot;PAPER_SCROLL_LEFT&quot;:2991,&quot;PAPER_SCROLL_TOP&quot;:2428,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src&quot;,&quot;THEME&quot;:&quot;designertemplate&quot;}">
+ </head> 
+ <body> 
+  <v-vertical-layout style-name="root-layout" responsive="true" id="root-layout" size-full="true" _id="root_layout"> 
+   <v-css-layout style-name="header-bar" width-full="true" _id="header_bar"> 
+    <v-native-button icon="fonticon://FontAwesome/f078" style-name="user-menu" width="20px" height="20px" plain-text="" _id="user_menu"></v-native-button> 
+    <v-label style-name="user-name-label" width="79px" plain-text="" _id="user_name_label">
+      John Smith 
+    </v-label> 
+    <v-text-field icon="fonticon://FontAwesome/f002" input-prompt="Search..." style-name="search-field" _id="search_field"></v-text-field> 
+   </v-css-layout> 
+   <v-horizontal-layout style-name="main-area-layout" size-full="true" _id="main_area" :expand=""> 
+    <v-css-layout style-name="side-bar" height-full="true" _id="side_bar"> 
+     <v-native-button icon="fonticon://FontAwesome/f080" style-name="menu-button selected" width-full="true" plain-text="" _id="menuButton1">
+       Dashboard 
+     </v-native-button> 
+     <v-native-button icon="fonticon://FontAwesome/f0f6" style-name="menu-button" width-full="true" plain-text="" _id="menuButton2">
+       Order 
+     </v-native-button> 
+     <v-native-button icon="fonticon://FontAwesome/f05a" style-name="menu-button" width-full="true" plain-text="" _id="menuButton4">
+       About 
+     </v-native-button> 
+    </v-css-layout> 
+    <v-panel style-name="scroll-panel" size-full="true" _id="scroll_panel" :expand=""> 
+     <v-css-layout style-name="dashboard-layout" responsive="true" width-full="true" _id="dashboard_layout"> 
+      <v-label style-name="header-label" plain-text="" _id="billing_header_label">
+        General Vaadin Statistics 
+      </v-label> 
+      <v-css-layout style-name="dashboard-item" width="365px" height="250px" _id="dashboard_item5"> 
+       <v-label style-name="header-label-small" size-auto="true" plain-text="" _id="dashboard_item_header">
+         Monthly Vaadin Statistics 
+       </v-label> 
+       <v-label style-name="statistics-label" _id="statistics_label">
+         Vaadin Addon Downloads 
+        <span class="statistics-value">232,392</span> 
+       </v-label> 
+       <v-label style-name="statistics-label" _id="statistics_label2">
+         Vaadin Designer Downloads 
+        <span class="statistics-value">114,036</span> 
+       </v-label> 
+       <v-label style-name="statistics-label" _id="statistics_label4">
+         Vaadin Charts Downloads 
+        <span class="statistics-value">151,663</span> 
+       </v-label> 
+       <v-label style-name="statistics-label" _id="statistics_label3">
+         Vaadin TestBench Downloads 
+        <span class="statistics-value">96,691</span> 
+       </v-label> 
+       <v-label style-name="statistics-label" height="24px" _id="statistics_label5">
+         Vaadin Homepage Visits 
+        <span class="statistics-value">471,484</span> 
+       </v-label> 
+      </v-css-layout> 
+      <v-css-layout style-name="dashboard-item" width="365px" height="250px" _id="dashboard_item26"> 
+       <v-label style-name="header-label-small" size-auto="true" plain-text="" _id="dashboard_item_header2">
+         Vaadin Release Info 
+       </v-label> 
+       <v-label style-name="statistics-label" _id="statistics_label6">
+         Current Vaadin Version 
+        <span class="statistics-value">7.5.4</span> 
+       </v-label> 
+       <v-label style-name="statistics-label" _id="statistics_label7">
+         Open Framework Tickets 
+        <span class="statistics-value">36</span> 
+       </v-label> 
+       <v-label style-name="statistics-label" _id="statistics_label8">
+         Open Designer Tickets 
+        <span class="statistics-value">12</span> 
+       </v-label> 
+       <v-label style-name="statistics-label" _id="statistics_label9">
+         Open Vaadin Charts Tickets 
+        <span class="statistics-value">23</span> 
+       </v-label> 
+       <v-label style-name="statistics-label" height="24px" _id="statistics_label10">
+         Next Vaadin Framework release 
+        <span class="statistics-value">10.10.2010</span> 
+       </v-label> 
+      </v-css-layout> 
+      <v-css-layout style-name="dashboard-item" width="365px" height="250px" _id="dashboard_item27"> 
+       <v-label style-name="header-label-small" size-auto="true" plain-text="" _id="dashboard_item_header3">
+         Upcoming Vaadin Trainings 
+       </v-label> 
+       <v-label style-name="statistics-label" _id="statistics_label18">
+         Turku, Finland 
+        <span class="statistics-value">Sep 9, 2015</span> 
+       </v-label> 
+       <v-label style-name="statistics-label" _id="statistics_label12">
+         Berlin, Germany 
+        <span class="statistics-value">Sep 14, 2015</span> 
+       </v-label> 
+       <v-label style-name="statistics-label" _id="statistics_label16">
+         San Jose, U.S 
+        <span class="statistics-value">Sep 21, 2015</span> 
+       </v-label> 
+       <v-label style-name="statistics-label" _id="statistics_label17">
+         München, Germany 
+        <span class="statistics-value">Oct 5, 2015</span> 
+       </v-label> 
+       <v-label style-name="statistics-label" _id="statistics_label19">
+         Rome, Italy 
+        <span class="statistics-value">Oct 19, 2015</span> 
+       </v-label> 
+      </v-css-layout> 
+      <v-css-layout style-name="dashboard-item chart-item" width="95%" height="250px" _id="dashboard_item25"> 
+       <v-image source="http://albin.abo.fi/~snyholm/chart.png" size-full="true"></v-image> 
+      </v-css-layout> 
+     </v-css-layout> 
+    </v-panel> 
+   </v-horizontal-layout> 
+  </v-vertical-layout>  
+ </body>
+</html>
