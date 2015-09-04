@@ -146,9 +146,12 @@ $v-textfield-border: none;
 			
 				height: 50px;
 			
-				& > .v-nativebutton-caption{
+				> .v-nativebutton-caption{
 					visibility: hidden;
-					margin-top: 5px;
+				}
+				
+				> .v-icon{
+					top: 0;
 				}
 			}
 		}
