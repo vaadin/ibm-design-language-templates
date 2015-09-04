@@ -1,9 +1,34 @@
+// Global variable overrides. Must be declared before importing Valo.
+
+// Defines the plaintext font size, weight and family. Font size affects general component sizing.
+
+//$v-font-weight: 300;
+
+// Defines the border used by all components.
+//$v-border: 1px solid (v-shade 0.7);
+//$v-border-radius: 4px;
+
+// Affects the color of some component elements, e.g Button, Panel title, etc
+//$v-background-color: hsl(210, 0%, 98%);
+// Affects the color of content areas, e.g  Panel and Window content, TextField input etc
+//$v-app-background-color: $v-background-color;
+
+// Affects the visual appearance of all components
+//$v-gradient: v-linear 8%;
+//$v-bevel-depth: 30%;
+//$v-shadow-opacity: 5%;
+
+// Defines colors for indicating status (focus, success, failure)
+//$v-focus-color: valo-focus-color(); // Calculates a suitable color automatically
+//$v-friendly-color: #2c9720;
+//$v-error-indicator-color: #ed473b;
+
 $v-font-size: 16px;
 $v-font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$root-background-color: #000;
+$root-background-color: #ffffff;
 $header-bar-height: 100px;
-$main-color: #6D7777;
-$menu-color: #323C3C;
+$main-color: #5AAAFA;
+$menu-color: #5AAAFA;
 $header-label-font-size: 1.618em;
 $v-border-radius: 0;
 $v-textfield-bevel: false;
@@ -15,7 +40,9 @@ $v-textfield-border: none;
 
 @import "../valo/valo.scss";
 
-.v-app {
+
+
+@mixin designertemplate {
 	@include valo;
 
 	.v-nativebutton{
@@ -58,17 +85,14 @@ $v-textfield-border: none;
 			
 			> .search-field{
                 background: none;
-				border-bottom: solid 2px #586262;
+				border-bottom: solid 2px #fff;
 				padding-left: 5px;
 				
 				&.v-textfield-prompt{
-					color: #959595;
+					color: #ffffff;
 					font-style: italic;
 				}
 			}
-            .v-icon {
-                color: $main-color;
-            }
 			
 		}
 		
@@ -78,7 +102,7 @@ $v-textfield-border: none;
 		
 		.side-bar {
 		
-			background-color: $menu-color;
+			background-color: #000;
 			width: 100px;
 			
 			> .menu-button{
@@ -88,11 +112,15 @@ $v-textfield-border: none;
 				
 				&.selected{
 					background-color: $root-background-color; 
+                    
+                    .v-nativebutton-caption {
+                        color: #1A1314;
+                    }
 				}
 				
 				.v-nativebutton-caption{
                     font-size: .7em;
-                    color: #C8D2D2;
+                    color: #E9E0E0;
                     text-transform: uppercase;
 					position: absolute;
 					bottom: 8px;
@@ -104,7 +132,6 @@ $v-textfield-border: none;
 				}
 				
 				.v-icon{
-                    color: $main-color;
 					position: absolute;
 					font-size: 35px;
 					margin-left: auto;
@@ -120,73 +147,44 @@ $v-textfield-border: none;
 			font-size: $header-label-font-size;
 			width: 100%;
 			margin-bottom: 20px;
-			color: #586262;
-			border-bottom: 3px solid #323C3C;
+			color: #000000;
+			border-bottom: 3px solid #D0C7C7;
 		}
 		
 		.header-label-small{
 			width: 100%;
-			color: #959F9F;
+			color: $main-color;
             text-transform: uppercase;
-			border-bottom: 2px solid $menu-color;
+			border-bottom: 2px solid #D0C7C7;
 		}
 		
-		
-	}
-	
-	.root-layout[width-range~="321px-768px"]{
-		.content-layout{
-			padding: 10px;
-		}
-		
-		.side-bar{
-			width: 60px;
-			
-			> .menu-button{
-			
-				height: 50px;
-			
-				& > .v-nativebutton-caption{
-					visibility: hidden;
-					margin-top: 5px;
-				}
-			}
-		}
-		
-		.header-bar{
-			height: 45px;
-			padding: 2px;	
-		}
-	}
-	
-	
-	.root-layout{
 		.billing-formlayout {
 			
-			background: none;
-			border: solid 1px $menu-color;
+			background: #f6f3f3;
+			border: #ffffff;
 			margin: 0 30px 0 0px;
 			float: left;
 			padding: 20px;
 			
 			.form-textfield{
 				background: none;
-				border-bottom: 2px solid $main-color;
+				border-bottom: 2px solid #D0C7C7;
 			}
         }
             
             .order-summary-layout{
-			background: $menu-color;
+			background: #8CD211;
+			border: #ffffff;
 			float: right;
 			padding: 20px;
                 
                 .header-label-small {
-                    color: #959F9F;
-                    border-bottom-color: #6D7777;
+                    color: #ffffff;
+                    border-bottom-color: #C8F08F;
                 }
                 
                 .v-label{
-                    color: #C8D2D2;
+                    color: #ffffff;
                 }
 			}
 			
@@ -215,7 +213,7 @@ $v-textfield-border: none;
 					width: 25px;
 					height: 25px;
 					line-height: 25px;
-                    color: #959F9F;
+                    color: #4B8400;
 				}
 			}
 		}
@@ -228,24 +226,47 @@ $v-textfield-border: none;
 		}
 		
 		.total-sum{
-            border-top: solid 2px $main-color; 
-            color: #DFE9E9 !important;
+            border-top: solid 2px #C8F08F; 
+            color: #C8F08F !important;
             font-size: 2em;
             &:first-letter {
                 font-weight: 400;
             }
 		}
-	}	
-	
+	}
 	
 	.root-layout[width-range~="321px-768px"]{
-		.billing-formlayout{
-				margin: 15px 0 0 0;
-				width: 100% !important;
-			}
-			
+		.billing-formlayout
+		{
+			margin: 15px 0 0 0;
+			width: 100% !important;
+		}
+		
 		.order-summary-layout{
-				margin: 15px 0 0 0;
+			margin: 15px 0 0 0;
+		}
+		
+		.content-layout{
+			padding: 10px;
+		}
+		
+		.side-bar{
+			width: 60px;
+			
+			> .menu-button{
+			
+				height: 50px;
+			
+				& > .v-nativebutton-caption{
+					visibility: hidden;
+					margin-top: 5px;
+				}
+			}
+		}
+		
+		.header-bar{
+			height: 45px;
+			padding: 2px;	
 		}
 	}
 }

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="UTF-8" name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;PAPER_WIDTH&quot;:1440,&quot;PAPER_HEIGHT&quot;:900,&quot;PAPER_SCROLL_LEFT&quot;:2624,&quot;PAPER_SCROLL_TOP&quot;:2101,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src&quot;,&quot;THEME&quot;:&quot;designertemplate&quot;}">
+	<style>
+	$v-font-size: 16px;
+$v-font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$root-background-color: #000;
+$header-bar-height: 100px;
+$main-color: #6D7777;
+$menu-color: #323C3C;
+$header-label-font-size: 1.618em;
+$v-border-radius: 0;
+$v-textfield-bevel: false;
+$v-textfield-shadow: false;
+$v-shadow: false;
+$v-bevel: false;
+$v-gradient: false;
+$v-textfield-border: none;
+
+@import "../valo/valo.scss";
+
+.v-app {
+	@include valo;
+
+	.v-nativebutton{
+		background: none;
+		border: none;
+		
+		&:hover{
+			cursor: pointer;
+		}
+	}
+
+
+	.root-layout{
+		background-color: $root-background-color;
+		
+		.scroll-panel{
+			background-color: $root-background-color;
+		}
+					
+		.header-bar{
+			background-color: $menu-color;
+			padding: 0px 15px 0 15px;
+			vertical-align: middle;
+			height: 65px;
+			
+			> * {
+				color: #FFFFFF;
+				float: right;
+				padding: 0;
+				line-height: 20px;
+				margin-left: 15px;
+				
+				/** Vertically center everything **/ 
+				position: relative;
+  				top: 50%;
+  				-webkit-transform: translateY(-50%);
+  				-ms-transform: translateY(-50%);
+ 				transform: translateY(-50%);
+			}
+			
+			> .search-field{
+                background: none;
+				border-bottom: solid 2px #586262;
+				padding-left: 5px;
+				
+				&.v-textfield-prompt{
+					color: #959595;
+					font-style: italic;
+				}
+			}
+            .v-icon {
+                color: $main-color;
+            }
+			
+		}
+		
+		.content-layout{
+			padding: 60px;
+		}
+		
+		.side-bar {
+		
+			background-color: $menu-color;
+			width: 100px;
+			
+			> .menu-button{
+				position: relative;
+				color: $main-color;
+				height: 90px;
+				
+				&.selected{
+					background-color: $root-background-color; 
+				}
+				
+				.v-nativebutton-caption{
+                    font-size: .7em;
+                    color: #C8D2D2;
+                    text-transform: uppercase;
+					position: absolute;
+					bottom: 8px;
+					text-align: center;				
+					left: 0;
+					right: 0;
+					margin-left: auto;
+					margin-right: auto;
+				}
+				
+				.v-icon{
+                    color: $main-color;
+					position: absolute;
+					font-size: 35px;
+					margin-left: auto;
+					margin-right: auto;
+					top: 10px;
+					left: 0;
+					right: 0;
+				}
+			}
+		}
+		
+		.header-label{
+			font-size: $header-label-font-size;
+			width: 100%;
+			margin-bottom: 20px;
+			color: #586262;
+			border-bottom: 3px solid #323C3C;
+		}
+		
+		.header-label-small{
+			width: 100%;
+			color: #959F9F;
+            text-transform: uppercase;
+			border-bottom: 2px solid $menu-color;
+		}
+		
+		
+	}
+	
+	.root-layout[width-range~="321px-768px"]{
+		.content-layout{
+			padding: 10px;
+		}
+		
+		.side-bar{
+			width: 60px;
+			
+			> .menu-button{
+			
+				height: 50px;
+			
+				& > .v-nativebutton-caption{
+					visibility: hidden;
+					margin-top: 5px;
+				}
+			}
+		}
+		
+		.header-bar{
+			height: 45px;
+			padding: 2px;	
+		}
+	}
+	
+	
+	.root-layout{
+		.billing-formlayout {
+			
+			background: none;
+			border: solid 1px $menu-color;
+			margin: 0 30px 0 0px;
+			float: left;
+			padding: 20px;
+			
+			.form-textfield{
+				background: none;
+				border-bottom: 2px solid $main-color;
+			}
+        }
+            
+            .order-summary-layout{
+			background: $menu-color;
+			float: right;
+			padding: 20px;
+                
+                .header-label-small {
+                    color: #959F9F;
+                    border-bottom-color: #6D7777;
+                }
+                
+                .v-label{
+                    color: #C8D2D2;
+                }
+			}
+			
+			.email-field{
+				min-width: 250px;
+			}
+		}
+		
+		.billing-formlayout{
+			width: 100%;
+			max-width: 722px;
+		}
+		
+		
+			.cancel-order-button{
+				background: none;
+				border: none;
+				position: relative; 
+				margin-left: 15px;
+				margin-top: 10px;
+				padding: 0;
+				float: right;
+
+				.v-icon{
+					font-size: 25px;
+					width: 25px;
+					height: 25px;
+					line-height: 25px;
+                    color: #959F9F;
+				}
+			}
+		}
+		
+		.order-sum{
+			position: absolute;
+			left: 170px;
+			text-align: right;
+			width: 150px;
+		}
+		
+		.total-sum{
+            border-top: solid 2px $main-color; 
+            color: #DFE9E9 !important;
+            font-size: 2em;
+            &:first-letter {
+                font-weight: 400;
+            }
+		}
+	}	
+	
+	
+	.root-layout[width-range~="321px-768px"]{
+		.billing-formlayout{
+				margin: 15px 0 0 0;
+				width: 100% !important;
+			}
+			
+		.order-summary-layout{
+				margin: 15px 0 0 0;
+		}
+	}
+}
+	</style>
+ </head> 
+ <body> 
+  <v-vertical-layout style-name="root-layout" responsive="true" id="root-layout" size-full="true" _id="root_layout"> 
+   <v-css-layout style-name="header-bar" width-full="true" _id="header_bar"> 
+    <v-native-button icon="fonticon://FontAwesome/f078" style-name="user-menu" width="20px" height="20px" plain-text="" _id="user_menu"></v-native-button> 
+    <v-label style-name="user-name-label" width="79px" plain-text="" _id="user_name_label">
+      John Smith 
+    </v-label> 
+    <v-text-field icon="fonticon://FontAwesome/f002" input-prompt="Search..." style-name="search-field" _id="search_field"></v-text-field> 
+   </v-css-layout> 
+   <v-horizontal-layout style-name="main-area-layout" size-full="true" _id="main_area" :expand=""> 
+    <v-css-layout style-name="side-bar" height-full="true" _id="side_bar"> 
+     <v-native-button icon="fonticon://FontAwesome/f080" style-name="menu-button" width-full="true" plain-text="" _id="menuButton1">
+       Dashboard 
+     </v-native-button> 
+     <v-native-button icon="fonticon://FontAwesome/f0f6" style-name="menu-button selected" width-full="true" plain-text="" _id="menuButton2">
+       Order 
+     </v-native-button> 
+     <v-native-button icon="fonticon://FontAwesome/f05a" style-name="menu-button" width-full="true" plain-text="" _id="menuButton4">
+       About 
+     </v-native-button> 
+    </v-css-layout> 
+    <v-panel style-name="scroll-panel" size-full="true" _id="scroll_panel" :expand=""> 
+     <v-css-layout style-name="content-layout" responsive="true" width-full="true" _id="content_layout"> 
+      <v-label style-name="header-label" plain-text="" _id="billing_header_label">
+        Billing Information 
+      </v-label> 
+      <v-css-layout style-name="main-content-wrapper" width-full="true" _id="main_content_wrapper"> 
+       <v-form-layout style-name="billing-formlayout" size-auto="true" margin-top="false" margin-bottom="false" _id="billing_form"> 
+        <v-label size-auto="true" plain-text="" _id="email_header_label">
+          Please enter your email address 
+        </v-label> 
+        <v-text-field input-prompt="Email" style-name="form-textfield email-field" width="382px" _id="email_field"></v-text-field> 
+        <v-label size-auto="true" plain-text="" _id="address_label">
+          Please enter your billing address 
+        </v-label> 
+        <v-horizontal-layout style-name="name-wrapper" spacing="true" _id="name_wrapper"> 
+         <v-text-field input-prompt="First Name" style-name="form-textfield" _id="firstname_field"></v-text-field> 
+         <v-text-field input-prompt="Last Name" style-name="form-textfield" _id="lastname_field"></v-text-field> 
+        </v-horizontal-layout> 
+        <v-text-field input-prompt="Street Address" style-name="form-textfield" _id="address_field"></v-text-field> 
+        <v-text-field input-prompt="Company" style-name="form-textfield" _id="company_field"></v-text-field> 
+        <v-text-field input-prompt="City" style-name="form-textfield" _id="city_field"></v-text-field> 
+        <v-horizontal-layout style-name="name-wrapper" spacing="true" _id="name_wrapper2"> 
+         <v-text-field input-prompt="State" style-name="form-textfield" _id="state_field"></v-text-field> 
+         <v-text-field input-prompt="Zip" style-name="form-textfield" _id="zip_field"></v-text-field> 
+        </v-horizontal-layout> 
+        <v-text-field input-prompt="Country" style-name="form-textfield" _id="country_field"></v-text-field> 
+        <v-text-field input-prompt="Phone" style-name="form-textfield" _id="phone_field"></v-text-field> 
+       </v-form-layout> 
+       <v-form-layout style-name="order-summary-layout" width="438px" margin-top="false" margin-bottom="false" _id="order_summary_layout"> 
+        <v-label style-name="header-label-small" size-auto="true" plain-text="" _id="order_heading">
+          Order Summary 
+        </v-label> 
+        <v-css-layout style-name="order-item" width="300px" _id="order_item"> 
+         <v-label style-name="order-label" width="260px" _id="order_label">
+           Vaadin Designer License 
+          <br> $ 389.00 
+         </v-label> 
+         <v-native-button icon="fonticon://FontAwesome/f057" style-name="cancel-order-button" width="25px" height="25px" plain-text="" _id="cancel_order_button"></v-native-button> 
+        </v-css-layout> 
+        <v-css-layout> 
+         <v-label style-name="tax-sum" size-auto="true" _id="tax_sum">
+           Tax : 
+          <span class="order-sum"> $0.00 </span> 
+         </v-label> 
+         <v-label style-name="total-sum" _id="total_sum">
+           Total : 
+          <span class="order-sum"> $ 389.00</span> 
+         </v-label> 
+        </v-css-layout> 
+       </v-form-layout> 
+      </v-css-layout> 
+     </v-css-layout> 
+    </v-panel> 
+   </v-horizontal-layout> 
+  </v-vertical-layout>  
+ </body>
+</html>

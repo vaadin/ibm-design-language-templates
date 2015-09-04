@@ -3,12 +3,3 @@
 @import "designertemplate.scss";
 @import "dashboardtemplate.scss";
 @import "logintemplate.scss";
-
-/* This file prefixes all rules with the theme name to avoid causing conflicts with other themes. */
-/* The actual styles should be defined in designertemplate.scss */
-.designertemplate{
-  @include addons;
-  @include designertemplate;
-  @include dashboardtemplate;
-  @include logintemplate;
-}
