@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <style>$v-font-size: 16px;
+$v-font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$v-border-radius: 0;
+$v-textfield-bevel: false;
+$v-textfield-shadow: false;
+$v-shadow: false;
+$v-bevel: false;
+$v-gradient: false;
+$v-textfield-border: 0;
+$root-background-color: #ffffff;
+$header-bar-height: 100px;
+$main-color: #5AAAFA;
+$menu-color: #5AAAFA;
+$header-label-font-size: 1.618em;
+
+@import "../valo/valo.scss";
+
+.v-app {
+	@include valo;
+	
+	.v-nativebutton{
+		background: none;
+		border: none;
+		
+		&:hover{
+			cursor: pointer;
+		}
+	}
+	
+	.login-root{
+	
+		background-color: $root-background-color;
+		padding: 60px;
+		
+		> .login-logo{
+			display: block;
+			position: relative;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		
+		> .login-wrapper{
+			background-color: #f6f3f3;
+			border: 1px solid white;
+			display: block;
+			width: 300px;
+			position: relative;
+			margin-left: auto;
+			margin-right: auto;
+			
+			.login-button{
+				float: right;
+			}
+			
+			.v-textfield{
+				width: 100%;
+			}
+		}
+		
+		.language-button{
+			cursor: pointer;
+			color: $main-color;
+			text-decoration: underline;
+		}
+	}
+}</style> 
+  <meta charset="UTF-8" name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;PAPER_WIDTH&quot;:768,&quot;PAPER_HEIGHT&quot;:1024,&quot;PAPER_SCROLL_LEFT&quot;:2036,&quot;PAPER_SCROLL_TOP&quot;:2220,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src&quot;,&quot;THEME&quot;:&quot;designertemplate&quot;}">
+ </head> 
+ <body> 
+  <v-css-layout style-name="root-layout login-root" id="root-layout" size-full="true" _id="root_layout"> 
+   <v-image source="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Vaadin-logo.svg/2000px-Vaadin-logo.svg.png" style-name="login-logo" width="450px" _id="logo"></v-image> 
+   <v-vertical-layout style-name="login-wrapper" width="299px" _id="login_wrapper"> 
+    <v-form-layout style-name="login-form" width="250px" margin-left="true" margin-bottom="false" _id="login_form" :center=""> 
+     <v-text-field></v-text-field> 
+     <v-text-field></v-text-field> 
+     <v-button style-name="login-button" plain-text="" _id="login_button">
+       Login 
+     </v-button> 
+    </v-form-layout> 
+    <v-css-layout style-name="language-layout" _id="language_layout" :center=""> 
+     <v-native-button style-name="language-button" plain-text="" _id="english">
+       English 
+     </v-native-button> 
+     <v-native-button style-name="language-button" plain-text="" _id="german">
+       Deutsch 
+     </v-native-button> 
+     <v-native-button style-name="language-button" plain-text="" _id="finnish">
+       Suomi 
+     </v-native-button> 
+     <v-native-button style-name="language-button" width="75px" plain-text="" _id="swedish">
+       Svenska 
+     </v-native-button> 
+    </v-css-layout> 
+   </v-vertical-layout> 
+  </v-css-layout>  
+ </body>
+</html>
