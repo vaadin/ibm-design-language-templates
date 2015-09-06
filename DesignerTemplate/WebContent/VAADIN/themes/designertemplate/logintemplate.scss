@@ -1,17 +1,17 @@
 $v-font-size: 16px;
 $v-font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$root-background-color: #000;
-$header-bar-height: 100px;
-$main-color: #6D7777;
-$menu-color: #323C3C;
-$header-label-font-size: 1.618em;
 $v-border-radius: 0;
 $v-textfield-bevel: false;
 $v-textfield-shadow: false;
 $v-shadow: false;
 $v-bevel: false;
 $v-gradient: false;
-$v-textfield-border: none;
+$v-textfield-border: 0;
+$root-background-color: #000;
+$header-bar-height: 100px;
+$main-color: #6D7777;
+$menu-color: #323C3C;
+$header-label-font-size: 1.618em;
 
 @import "../valo/valo.scss";
 

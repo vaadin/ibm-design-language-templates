@@ -1,17 +1,17 @@
 $v-font-size: 16px;
 $v-font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$root-background-color: #000;
-$header-bar-height: 100px;
-$main-color: #6D7777;
-$menu-color: #323C3C;
-$header-label-font-size: 1.618em;
 $v-border-radius: 0;
 $v-textfield-bevel: false;
 $v-textfield-shadow: false;
 $v-shadow: false;
 $v-bevel: false;
 $v-gradient: false;
-$v-textfield-border: none;
+$v-textfield-border: 0;
+$root-background-color: #000;
+$header-bar-height: 100px;
+$main-color: #6D7777;
+$menu-color: #323C3C;
+$header-label-font-size: 1.618em;
 
 @import "../valo/valo.scss";
 
@@ -27,12 +27,12 @@ $v-textfield-border: none;
 		}
 	}
 
-
 	.root-layout{
 		background-color: $root-background-color;
 		
 		.scroll-panel{
 			background-color: $root-background-color;
+			border: none;
 		}
 					
 		.header-bar{
@@ -130,8 +130,6 @@ $v-textfield-border: none;
             text-transform: uppercase;
 			border-bottom: 2px solid $menu-color;
 		}
-		
-		
 	}
 	
 	.root-layout[width-range~="321px-768px"]{
@@ -178,19 +176,18 @@ $v-textfield-border: none;
 			}
         }
             
-            .order-summary-layout{
+		.order-summary-layout{
 			background: $menu-color;
 			float: right;
 			padding: 20px;
                 
-                .header-label-small {
-                    color: #959F9F;
-                    border-bottom-color: #6D7777;
-                }
+			.header-label-small {
+			color: #959F9F;
+				border-bottom-color: #6D7777;
+			}
                 
-                .v-label{
-                    color: #C8D2D2;
-                }
+			.v-label{
+				color: #C8D2D2;
 			}
 			
 			.email-field{
@@ -204,22 +201,21 @@ $v-textfield-border: none;
 		}
 		
 		
-			.cancel-order-button{
-				background: none;
-				border: none;
-				position: relative; 
-				margin-left: 15px;
-				margin-top: 10px;
-				padding: 0;
-				float: right;
+		.cancel-order-button{
+			background: none;
+			border: none;
+			position: relative; 
+			margin-left: 15px;
+			margin-top: 10px;
+			padding: 0;
+			float: right;
 
-				.v-icon{
-					font-size: 25px;
-					width: 25px;
-					height: 25px;
-					line-height: 25px;
-                    color: #959F9F;
-				}
+			.v-icon{
+				font-size: 25px;
+				width: 25px;
+				height: 25px;
+				line-height: 25px;
+				color: #959F9F;
 			}
 		}
 		
@@ -249,6 +245,16 @@ $v-textfield-border: none;
 			
 		.order-summary-layout{
 				margin: 15px 0 0 0;
+		}
+	}
+	
+	.root-layout[width-range~="769px-1426px"]{
+		.billing-formlayout{
+			margin-bottom: 30px;
+		}
+		
+		.order-summary-layout{
+			float: left;
 		}
 	}
 }
