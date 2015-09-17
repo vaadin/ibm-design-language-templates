@@ -1,26 +1,13 @@
 <!DOCTYPE html>
 <html>
  <head> 
-  <style>$v-font-size: 16px;
-$v-font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$v-border-radius: 0;
-$v-textfield-bevel: false;
-$v-textfield-shadow: false;
-$v-shadow: false;
-$v-bevel: false;
-$v-gradient: false;
-$v-textfield-border: 0;
-$root-background-color: #ffffff;
-$header-bar-height: 100px;
-$main-color: #FF71D4;
-$menu-color: #323C3C;
-$header-label-font-size: 1.618em;
-
-@import "../valo/valo.scss";
-
-.v-app {
-	@include valo;
-
+  <style>.root-layout.form-template-vivid {
+	$root-background-color: #ffffff;
+	$header-bar-height: 100px;
+	$main-color: #FF71D4;
+	$menu-color: #323C3C;
+	$header-label-font-size: 1.618em;
+	
 	.v-nativebutton{
 		background: none;
 		border: none;
@@ -30,187 +17,59 @@ $header-label-font-size: 1.618em;
 		}
 	}
 
-	.root-layout{
-		background-color: $root-background-color;
-		
-		.scroll-panel{
-			background-color: $root-background-color;
-			border: none;
-		}
-					
-		.header-bar{
-			background-color: $menu-color;
-			padding: 0px 15px 0 15px;
-			vertical-align: middle;
-			height: 65px;
-			
-			> * {
-				color: #FFFFFF;
-				float: right;
-				padding: 0;
-				line-height: 20px;
-				margin-left: 15px;
-				
-				/** Vertically center everything **/ 
-				position: relative;
-  				top: 50%;
-  				-webkit-transform: translateY(-50%);
-  				-ms-transform: translateY(-50%);
- 				transform: translateY(-50%);
-			}
-			
-			> .search-field{
-                background: none;
-				border-bottom: solid 2px #fff;
-				padding-left: 5px;
-				
-				&.v-textfield-prompt{
-					color: #959595;
-					font-style: italic;
-				}
-				
-				.v-icon {
-					color: $main-color;
-            	}
-			}
-			
-		}
-		
-		.content-layout{
-			padding: 60px;
-		}
-		
-		.side-bar {
-		
-			background-color: #FF7832;
-			width: 100px;
-			
-			> .menu-button{
-				position: relative;
-				color: $main-color;
-				height: 90px;
-				
-				&.selected{
-					background-color: $root-background-color; 
-				
-					.v-nativebutton-caption {
-                        color: #323232;
-                    }
-			
-				}
-				
-				.v-nativebutton-caption{
-                    font-size: .7em;
-                    color: #ffffff;
-                    text-transform: uppercase;
-					position: absolute;
-					bottom: 8px;
-					text-align: center;				
-					left: 0;
-					right: 0;
-					margin-left: auto;
-					margin-right: auto;
-				}
-				
-				.v-icon{
-                    color: #FFD4A0;
-					position: absolute;
-					font-size: 35px;
-					margin-left: auto;
-					margin-right: auto;
-					top: 10px;
-					left: 0;
-					right: 0;
-				}
-			}
-		}
-		
-		.header-label{
-			font-size: $header-label-font-size;
-			width: 100%;
-			margin-bottom: 20px;
-			color: #000000;
-			border-bottom: 3px solid #D0C7C7;
-		}
-		
-		.header-label-small{
-			width: 100%;
-			color: #ffffff;
-            text-transform: uppercase;
-			border-bottom: 2px solid #FF9EEE;
-		}
-		
-		
+	background-color: $root-background-color;
+	padding: 60px;
+	
+	.header-label{
+		font-size: $header-label-font-size;
+		width: 100%;
+		margin-bottom: 20px;
+		color: #000000;
+		border-bottom: 3px solid #D0C7C7;
 	}
 	
-	.root-layout[width-range~="321px-768px"]{
-		.content-layout{
-			padding: 10px;
-		}
-		
-		.side-bar{
-			width: 60px;
-			
-			> .menu-button{
-			
-				height: 50px;
-			
-				> .v-nativebutton-caption{
-					visibility: hidden;
-				}
-				
-				> .v-icon{
-					top: 0;
-				}
-			}
-		}
-		
-		.header-bar{
-			height: 45px;
-			padding: 2px;	
-		}
+	.header-label-small{
+		width: 100%;
+		color: #ffffff;
+        text-transform: uppercase;
+		border-bottom: 2px solid #FF9EEE;
 	}
-	.root-layout{
-		.billing-formlayout {
-			
-			background: #f6f3f3;
-			border: solid 1px #ffffff;
-			margin: 0 30px 0 0px;
-			float: left;
-			padding: 20px;
-			
-			.form-textfield{
-				background: none;
-				border-bottom: 2px solid #D0C7C7;
-			}
-        }
+	
+	.billing-formlayout {
+		
+		background: #f6f3f3;
+		border: solid 1px #ffffff;
+		margin: 0 30px 0 0px;
+		float: left;
+		padding: 20px;
+		width: 100%;
+		max-width: 722px;
+		
+		.form-textfield{
+			background: none;
+			border-bottom: 2px solid #D0C7C7;
+		}
+		
+		.email-field{
+			min-width: 250px;
+		}
+    }
+        
+	.order-summary-layout{
+		background: $main-color;
+		border: #ffffff;
+		float: right;
+		padding: 20px;
             
-		.order-summary-layout{
-			background: $main-color;
-			border: #ffffff;
-			float: right;
-			padding: 20px;
-                
-			.header-label-small {
-				color: #ffffff;
-				border-bottom-color: #FFD2FF;
-			}
-                
-			.v-label{
-				color: #ffffff;
-			}
-			
-			.email-field{
-				min-width: 250px;
-			}
+		.header-label-small {
+			color: #ffffff;
+			border-bottom-color: #FFD2FF;
 		}
-		
-		.billing-formlayout{
-			width: 100%;
-			max-width: 722px;
+            
+		.v-label{
+			color: #ffffff;
 		}
-		
-		
+
 		.cancel-order-button{
 			background: none;
 			border: none;
@@ -228,37 +87,36 @@ $header-label-font-size: 1.618em;
 				color: #DB2780;
 			}
 		}
-		
 		.order-sum{
 			position: absolute;
 			left: 170px;
 			text-align: right;
 			width: 150px;
 		}
-		
+	
 		.total-sum{
-            border-top: solid 2px #FFD2FF;
-            color: #FFD2FF !important;
-            font-size: 2em;
-            &:first-letter {
-                font-weight: 400;
-            }
-		}
-	}	
-	
-	
-	.root-layout[width-range~="321px-768px"]{
-		.billing-formlayout{
-				margin: 15px 0 0 0;
-				width: 100% !important;
+			border-top: solid 2px #FFD2FF;
+			color: #FFD2FF !important;
+			font-size: 2em;
+			&:first-letter {
+				font-weight: 400;
 			}
+		}
+	}
+
+	&[width-range~="321px-768px"]{
+		padding: 10px;
+		.billing-formlayout{
+			margin: 15px 0 0 0;
+			width: 100% !important;
+		}
 			
 		.order-summary-layout{
-				margin: 15px 0 0 0;
+			margin: 15px 0 0 0;
 		}
 	}
 	
-	.root-layout[width-range~="769px-1426px"]{
+	&[width-range~="769px-1426px"]{
 		.billing-formlayout{
 			margin-bottom: 30px;
 		}
@@ -267,32 +125,16 @@ $header-label-font-size: 1.618em;
 			float: left;
 		}
 	}
+}
+
+.form-template-vivid[width-range~="321px-768px"],
+.form-template-vivid[width-range~="769px-1426px"]{
+	visibility: visible;
 }</style>
   <meta charset="UTF-8" name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;PAPER_WIDTH&quot;:1440,&quot;PAPER_HEIGHT&quot;:900,&quot;PAPER_SCROLL_LEFT&quot;:1558,&quot;PAPER_SCROLL_TOP&quot;:2027,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src&quot;,&quot;THEME&quot;:&quot;designertemplate&quot;}">
  </head> 
  <body> 
-  <v-vertical-layout style-name="root-layout" responsive="true" id="root-layout" size-full="true" _id="root_layout"> 
-   <v-css-layout style-name="header-bar" width-full="true" _id="header_bar"> 
-    <v-native-button icon="fonticon://FontAwesome/f078" style-name="user-menu" width="20px" height="20px" plain-text="" _id="user_menu"></v-native-button> 
-    <v-label style-name="user-name-label" width="79px" plain-text="" _id="user_name_label">
-      John Smith 
-    </v-label> 
-    <v-text-field icon="fonticon://FontAwesome/f002" input-prompt="Search..." style-name="search-field" _id="search_field"></v-text-field> 
-   </v-css-layout> 
-   <v-horizontal-layout style-name="main-area-layout" size-full="true" _id="main_area" :expand=""> 
-    <v-css-layout style-name="side-bar" height-full="true" _id="side_bar"> 
-     <v-native-button icon="fonticon://FontAwesome/f080" style-name="menu-button" width-full="true" plain-text="" _id="menuButton1">
-       Dashboard 
-     </v-native-button> 
-     <v-native-button icon="fonticon://FontAwesome/f0f6" style-name="menu-button selected" width-full="true" plain-text="" _id="menuButton2">
-       Order 
-     </v-native-button> 
-     <v-native-button icon="fonticon://FontAwesome/f05a" style-name="menu-button" width-full="true" plain-text="" _id="menuButton4">
-       About 
-     </v-native-button> 
-    </v-css-layout> 
-    <v-panel style-name="scroll-panel" size-full="true" _id="scroll_panel" :expand=""> 
-     <v-css-layout style-name="content-layout" responsive="true" width-full="true" _id="content_layout"> 
+     <v-css-layout style-name="root-layout form-template-vivid" responsive="true" id="root-layout" width-full="true" _id="root_layout"> 
       <v-label style-name="header-label" plain-text="" _id="billing_header_label">
         Billing Information 
       </v-label> 
@@ -343,8 +185,5 @@ $header-label-font-size: 1.618em;
        </v-form-layout> 
       </v-css-layout> 
      </v-css-layout> 
-    </v-panel> 
-   </v-horizontal-layout> 
-  </v-vertical-layout>  
  </body>
 </html>
