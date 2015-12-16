@@ -20,7 +20,7 @@ public class DesignertemplateUI extends UI {
     @Override
     protected void init(VaadinRequest request) {
         // setContent(new IBMTemplate());
-        setContent(new DashboardTemplate());
+        setContent(new DashboardTemplateDark());
     }
 
 }
