@@ -1,18 +1,10 @@
 <!DOCTYPE html>
 <html>
  <head>
-  <style>
-$v-font-size: 16px;
-$v-font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$v-border-radius: 0;
-$v-textfield-bevel: false;
-$v-textfield-shadow: false;
-$v-shadow: false;
-$v-bevel: false;
-$v-gradient: false;
-$v-textfield-border: 0;  
+<style>
 .root-layout.dashboard-view-template-dark {
 	$root-background-color: #000;
+	$template-font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	$main-color: #6D7777;
 	$menu-color: #323C3C;
 	$header-label-font-size: 1.618em;
@@ -30,6 +22,7 @@ $v-textfield-border: 0;
 	
 	.header-label{
 		font-size: $header-label-font-size;
+		font-family: $template-font-family;
 		width: 100%;
 		margin-bottom: 20px;
 		color: #586262;
@@ -37,6 +30,7 @@ $v-textfield-border: 0;
 	}
 	
 	.header-label-small{
+	    font-family: $template-font-family;
 		width: 100%;
 		color: $main-color;
         text-transform: uppercase;
@@ -56,6 +50,7 @@ $v-textfield-border: 0;
 		
 		> .statistics-label{
 			margin-top: 15px;
+			font-family: $template-font-family;
 			
 			.statistics-value{
 				float: right;
@@ -81,89 +76,90 @@ $v-textfield-border: 0;
 
 .dashboard-view-template-dark[width-range~="321px-768px"]{
 	visibility: visible;
-}</style> 
-  <meta charset="UTF-8" name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;PAPER_WIDTH&quot;:1440,&quot;PAPER_HEIGHT&quot;:900,&quot;PAPER_SCROLL_LEFT&quot;:1986,&quot;PAPER_SCROLL_TOP&quot;:1987,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src&quot;,&quot;THEME&quot;:&quot;designertemplate&quot;}">
+}
+</style>
+  <meta charset="UTF-8" name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src&quot;,&quot;THEME&quot;:&quot;designertemplate&quot;}">
  </head> 
  <body> 
-  <v-css-layout style-name="root-layout dashboard-view-template-dark" responsive="true" width-full="true" _id="root_layout">
-   <v-label style-name="header-label" plain-text="" _id="billing_header_label">
+  <vaadin-css-layout style-name="root-layout dashboard-view-template-dark" responsive="true" width-full="true" _id="root_layout"> 
+   <vaadin-label style-name="header-label" plain-text="" _id="billing_header_label">
      General Vaadin Statistics 
-   </v-label> 
-   <v-css-layout style-name="dashboard-item" width="365px" height="250px" _id="dashboard_item5"> 
-    <v-label style-name="header-label-small" size-auto="true" plain-text="" _id="dashboard_item_header">
+   </vaadin-label> 
+   <vaadin-css-layout style-name="dashboard-item" width="365px" height="250px" _id="dashboard_item5"> 
+    <vaadin-label style-name="header-label-small" size-auto="true" plain-text="" _id="dashboard_item_header">
       Monthly Vaadin Statistics 
-    </v-label> 
-    <v-label style-name="statistics-label" _id="statistics_label">
+    </vaadin-label> 
+    <vaadin-label style-name="statistics-label" _id="statistics_label">
       Vaadin Addon Downloads 
      <span class="statistics-value">232,392</span> 
-    </v-label> 
-    <v-label style-name="statistics-label" _id="statistics_label2">
+    </vaadin-label> 
+    <vaadin-label style-name="statistics-label" _id="statistics_label2">
       Vaadin Designer Downloads 
      <span class="statistics-value">114,036</span> 
-    </v-label> 
-    <v-label style-name="statistics-label" _id="statistics_label4">
+    </vaadin-label> 
+    <vaadin-label style-name="statistics-label" _id="statistics_label4">
       Vaadin Charts Downloads 
      <span class="statistics-value">151,663</span> 
-    </v-label> 
-    <v-label style-name="statistics-label" _id="statistics_label3">
+    </vaadin-label> 
+    <vaadin-label style-name="statistics-label" _id="statistics_label3">
       Vaadin TestBench Downloads 
      <span class="statistics-value">96,691</span> 
-    </v-label> 
-    <v-label style-name="statistics-label" height="24px" _id="statistics_label5">
+    </vaadin-label> 
+    <vaadin-label style-name="statistics-label" height="24px" _id="statistics_label5">
       Vaadin Homepage Visits 
      <span class="statistics-value">471,484</span> 
-    </v-label> 
-   </v-css-layout> 
-   <v-css-layout style-name="dashboard-item" width="365px" height="250px" _id="dashboard_item26"> 
-    <v-label style-name="header-label-small" size-auto="true" plain-text="" _id="dashboard_item_header2">
+    </vaadin-label> 
+   </vaadin-css-layout> 
+   <vaadin-css-layout style-name="dashboard-item" width="365px" height="250px" _id="dashboard_item26"> 
+    <vaadin-label style-name="header-label-small" size-auto="true" plain-text="" _id="dashboard_item_header2">
       Vaadin Release Info 
-    </v-label> 
-    <v-label style-name="statistics-label" _id="statistics_label6">
+    </vaadin-label> 
+    <vaadin-label style-name="statistics-label" _id="statistics_label6">
       Current Vaadin Version 
      <span class="statistics-value">7.5.4</span> 
-    </v-label> 
-    <v-label style-name="statistics-label" _id="statistics_label7">
+    </vaadin-label> 
+    <vaadin-label style-name="statistics-label" _id="statistics_label7">
       Open Framework Tickets 
      <span class="statistics-value">36</span> 
-    </v-label> 
-    <v-label style-name="statistics-label" _id="statistics_label8">
+    </vaadin-label> 
+    <vaadin-label style-name="statistics-label" _id="statistics_label8">
       Open Designer Tickets 
      <span class="statistics-value">12</span> 
-    </v-label> 
-    <v-label style-name="statistics-label" _id="statistics_label9">
+    </vaadin-label> 
+    <vaadin-label style-name="statistics-label" _id="statistics_label9">
       Open Vaadin Charts Tickets 
      <span class="statistics-value">23</span> 
-    </v-label> 
-    <v-label style-name="statistics-label" height="24px" _id="statistics_label10">
+    </vaadin-label> 
+    <vaadin-label style-name="statistics-label" height="24px" _id="statistics_label10">
       Next Vaadin Framework release 
      <span class="statistics-value">10.10.2010</span> 
-    </v-label> 
-   </v-css-layout> 
-   <v-css-layout style-name="dashboard-item" width="365px" height="250px" _id="dashboard_item27"> 
-    <v-label style-name="header-label-small" size-auto="true" plain-text="" _id="dashboard_item_header3">
+    </vaadin-label> 
+   </vaadin-css-layout> 
+   <vaadin-css-layout style-name="dashboard-item" width="365px" height="250px" _id="dashboard_item27"> 
+    <vaadin-label style-name="header-label-small" size-auto="true" plain-text="" _id="dashboard_item_header3">
       Upcoming Vaadin Trainings 
-    </v-label> 
-    <v-label style-name="statistics-label" _id="statistics_label18">
+    </vaadin-label> 
+    <vaadin-label style-name="statistics-label" _id="statistics_label18">
       Turku, Finland 
      <span class="statistics-value">Sep 9, 2015</span> 
-    </v-label> 
-    <v-label style-name="statistics-label" _id="statistics_label12">
+    </vaadin-label> 
+    <vaadin-label style-name="statistics-label" _id="statistics_label12">
       Berlin, Germany 
      <span class="statistics-value">Sep 14, 2015</span> 
-    </v-label> 
-    <v-label style-name="statistics-label" _id="statistics_label16">
+    </vaadin-label> 
+    <vaadin-label style-name="statistics-label" _id="statistics_label16">
       San Jose, U.S 
      <span class="statistics-value">Sep 21, 2015</span> 
-    </v-label> 
-    <v-label style-name="statistics-label" _id="statistics_label17">
+    </vaadin-label> 
+    <vaadin-label style-name="statistics-label" _id="statistics_label17">
       München, Germany 
      <span class="statistics-value">Oct 5, 2015</span> 
-    </v-label> 
-    <v-label style-name="statistics-label" _id="statistics_label19">
+    </vaadin-label> 
+    <vaadin-label style-name="statistics-label" _id="statistics_label19">
       Rome, Italy 
      <span class="statistics-value">Oct 19, 2015</span> 
-    </v-label> 
-   </v-css-layout> 
-  </v-css-layout> 
+    </vaadin-label> 
+   </vaadin-css-layout> 
+  </vaadin-css-layout>  
  </body>
 </html>

@@ -1,24 +1,31 @@
 <!DOCTYPE html>
 <html>
  <head>
-  <style>
-$v-font-size: 16px;
-$v-font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$v-border-radius: 0;
-$v-textfield-bevel: false;
-$v-textfield-shadow: false;
-$v-shadow: false;
-$v-bevel: false;
-$v-gradient: false;
-$v-textfield-border: 0;
+<style>
 .root-layout.navigation-template-dark {
 	$root-background-color: #000;
-	$main-color: #6D7777;
-	$menu-color: #323C3C;
-	$header-label-font-size: 1.618em;
+	$template-font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 	
+	
+	$header-bar-background: #323C3C;
+	$header-bar-font-size: 16px;
+	$header-bar-text-color: #C8D2D2;
+	
+	$search-field-border: 0;
+	$search-field-bevel: 0;
+	$search-field-prompt-color: #959595;
+	$search-field-border-color: #586262;
+	$username-label-color: #fff;
+	
+	$side-bar-background: $header-bar-background;
+	$menu-button-selected-text-color: #C8D2D2;
+	$menu-button-selected-background: $root-background-color;
+	$menu-button-text-color: $menu-button-selected-text-color;
+	$menu-button-icon-color: $menu-button-selected-text-color;
+	
 	background-color: $root-background-color;
 	
-	.v-nativebutton{
+	.header-bar .v-nativebutton,
+	.side-bar .v-nativebutton {
 		background: none;
 		border: none;
 		
@@ -26,25 +33,27 @@ $v-textfield-border: 0;
 			cursor: pointer;
 		}
 	}
-	
-	.scroll-panel{
+
+	.scroll-panel {
 		background-color: $root-background-color;
         border: none;
         border-radius: 0;		
 	}
 				
-	.header-bar{
-		background-color: $menu-color;
+	.header-bar {
+		background-color: $header-bar-background;
 		padding: 0px 15px 0 15px;
 		vertical-align: middle;
 		height: 65px;
 		
 		> * {
-			color: #FFFFFF;
+			color: $header-bar-text-color;
 			float: right;
 			padding: 0;
 			line-height: 20px;
 			margin-left: 15px;
+			font-size: $header-bar-font-size;
+			font-family: $template-font-family;
 			
 			/** Vertically center everything **/ 
 			position: relative;
@@ -54,40 +63,44 @@ $v-textfield-border: 0;
 			transform: translateY(-50%);
 		}
 		
-		> .search-field{
-            background: none;
-			border-bottom: solid 2px #586262;
+		> .search-field {
+			background: none;
+			color: $search-field-prompt-color;
 			padding-left: 5px;
-			
-			&.v-textfield-prompt{
-				color: #959595;
-				font-style: italic;
-			}
-		}
-		.v-icon {
-			color: $main-color;
+			box-shadow: none;
+			border: $search-field-border;
+			border-bottom: solid 2px $search-field-border-color;
+			border-radius: 0;
+			font-style: italic;
 		}
 		
+		.user-name-label {
+		    color: $username-label-color;
+		}
 	}
-	
+		
 	.side-bar {
-	
-		background-color: $menu-color;
+		background-color: $side-bar-background;
 		width: 100px;
 		
-		> .menu-button{
+		> .menu-button {
 			position: relative;
-			color: $main-color;
+			color: $menu-button-text-color;
 			height: 90px;
 			
 			&.selected{
-				background-color: $root-background-color; 
+				background-color: $menu-button-selected-background; 
+			
+				.v-nativebutton-caption {
+					color: $menu-button-selected-text-color;
+				}
+		
 			}
 			
-			.v-nativebutton-caption{
-                font-size: .7em;
-                color: #C8D2D2;
-                text-transform: uppercase;
+			.v-nativebutton-caption {
+				font-family: $template-font-family;				
+				font-size: .7em;
+				text-transform: uppercase;
 				position: absolute;
 				bottom: 8px;
 				text-align: center;				
@@ -97,7 +110,8 @@ $v-textfield-border: 0;
 				margin-right: auto;
 			}
 			
-			.v-icon{
+			.v-icon {
+				color: $menu-button-icon-color;
 				position: absolute;
 				font-size: 35px;
 				margin-left: auto;
@@ -107,56 +121,24 @@ $v-textfield-border: 0;
 				right: 0;
 			}
 		}
-	}
-	
-	.header-label{
-		font-size: $header-label-font-size;
-		width: 100%;
-		margin-bottom: 20px;
-		color: #586262;
-		border-bottom: 3px solid $menu-color;
-	}
-	
-	.header-label-small{
-		width: 100%;
-		color: $main-color;
-        text-transform: uppercase;
-		border-bottom: 2px solid $menu-color;
-	}
-	
-	.dashboard-layout{
+	}	
+   
+	.dashboard-layout {
 		padding: 60px 60px 0 60px;
 	}
-    
-	.dashboard-item{
-		background: none;
-		border: solid 1px $menu-color;
-		margin: 0 30px 30px 0px;
-		padding: 15px;
-		color: $main-color;
-		
-		> .statistics-label{
-			margin-top: 15px;
-			
-			.statistics-value{
-				float: right;
-				font-weight: bold;
-			}
-		}
-	}
-    
-	&[width-range~="321px-768px"]{
+    	
+	&[width-range~="321px-768px"] {
 		.dashboard-layout{
 			padding: 10px;
 		}
 		
-		.dashboard-item{
+		.dashboard-item {
 			width: 100% !important;
 			min-width: 321px;
 			margin: 0;
 		}
-		
-		.side-bar{
+	
+		.side-bar {
 			width: 60px;
 			
 			> .menu-button{
@@ -173,42 +155,42 @@ $v-textfield-border: 0;
 			}
 		}
 		
-		.header-bar{
+		.header-bar {
 			height: 45px;
 			padding: 2px;	
 		}
 	}
 }
 
-.navigation-template-dark[width-range~="321px-768px"]{
+.navigation-template-dark[width-range~="321px-768px"] {
 	visibility: visible;
-}</style> 
-  <meta charset="UTF-8" name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;PAPER_WIDTH&quot;:1440,&quot;PAPER_HEIGHT&quot;:900,&quot;PAPER_SCROLL_LEFT&quot;:1986,&quot;PAPER_SCROLL_TOP&quot;:1987,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src&quot;,&quot;THEME&quot;:&quot;designertemplate&quot;}">
+}
+</style>
+  <meta charset="UTF-8" name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src&quot;,&quot;THEME&quot;:&quot;designertemplate&quot;}">
  </head> 
  <body> 
-  <v-vertical-layout style-name="root-layout navigation-template-dark" responsive="true" size-full="true" _id="root_layout">
-   <v-css-layout style-name="header-bar" width-full="true" _id="header_bar"> 
-    <v-native-button icon="fonticon://FontAwesome/f078" style-name="user-menu" width="20px" height="20px" plain-text="" _id="user_menu"></v-native-button> 
-    <v-label style-name="user-name-label" width="79px" plain-text="" _id="user_name_label">
+  <vaadin-vertical-layout style-name="root-layout navigation-template-dark" responsive="true" size-full="true" _id="root_layout"> 
+   <vaadin-css-layout style-name="header-bar" width-full="true" _id="header_bar"> 
+    <vaadin-native-button icon="fonticon://FontAwesome/f078" style-name="user-menu" width="20px" height="20px" plain-text="" _id="user_menu"></vaadin-native-button> 
+    <vaadin-label style-name="user-name-label" width="79px" plain-text="" _id="user_name_label">
       John Smith 
-    </v-label> 
-    <v-text-field icon="fonticon://FontAwesome/f002" input-prompt="Search..." style-name="search-field" _id="search_field"></v-text-field> 
-   </v-css-layout> 
-   <v-horizontal-layout style-name="main-area-layout" size-full="true" _id="main_area" :expand=""> 
-    <v-css-layout style-name="side-bar" height-full="true" _id="side_bar"> 
-     <v-native-button icon="fonticon://FontAwesome/f080" style-name="menu-button selected" width-full="true" plain-text="" _id="menuButton1">
+    </vaadin-label> 
+    <vaadin-text-field icon="fonticon://FontAwesome/f002" input-prompt="Search..." style-name="search-field" _id="search_field"></vaadin-text-field> 
+   </vaadin-css-layout> 
+   <vaadin-horizontal-layout style-name="main-area-layout" size-full="true" _id="main_area" :expand=""> 
+    <vaadin-css-layout style-name="side-bar" height-full="true" _id="side_bar"> 
+     <vaadin-native-button icon="fonticon://FontAwesome/f080" style-name="menu-button selected" width-full="true" plain-text="" _id="menuButton1">
        Dashboard 
-     </v-native-button> 
-     <v-native-button icon="fonticon://FontAwesome/f0f6" style-name="menu-button" width-full="true" plain-text="" _id="menuButton2">
+     </vaadin-native-button> 
+     <vaadin-native-button icon="fonticon://FontAwesome/f0f6" style-name="menu-button" width-full="true" plain-text="" _id="menuButton2">
        Order 
-     </v-native-button> 
-     <v-native-button icon="fonticon://FontAwesome/f05a" style-name="menu-button" width-full="true" plain-text="" _id="menuButton3">
+     </vaadin-native-button> 
+     <vaadin-native-button icon="fonticon://FontAwesome/f05a" style-name="menu-button" width-full="true" plain-text="" _id="menuButton3">
        About 
-     </v-native-button> 
-    </v-css-layout> 
-    <v-panel style-name="scroll-panel" size-full="true" _id="scroll_panel" :expand=""> 
-    </v-panel> 
-   </v-horizontal-layout> 
-  </v-vertical-layout>  
+     </vaadin-native-button> 
+    </vaadin-css-layout> 
+    <vaadin-panel style-name="scroll-panel" size-full="true" _id="scroll_panel" :expand=""></vaadin-panel> 
+   </vaadin-horizontal-layout> 
+  </vaadin-vertical-layout>  
  </body>
 </html>
